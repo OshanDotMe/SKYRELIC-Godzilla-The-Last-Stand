@@ -32,4 +32,4 @@ Every single creative asset used in this game was built entirely from scratch **
 *Please note: For security reasons, the underlying creative artwork folders (`art/`) containing binary textures and sound elements, alongside private SilentWolf cloud infrastructure secret keys, are hidden via `.gitignore` to protect intellectual property. The code uploaded here serves purely as a demonstration of technical programming proficiency, system design, and clean architectural structuring.*
 
 ---
-Developed and maintained by **SKYRELIC** (Oshan Adithya). 🚀
+Developed and maintained by **SKYRELIC** (Oshan Adithya). 
