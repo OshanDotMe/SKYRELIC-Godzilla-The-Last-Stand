@@ -1,0 +1,344 @@
+[gd_scene format=3 uid="uid://blqa0v0xflg5s"]
+
+[ext_resource type="Texture2D" uid="uid://7042ltkykttm" path="res://art/godzilla.png" id="1_2xjd5"]
+[ext_resource type="Script" uid="uid://cnknnf3fj7vy7" path="res://scripts/game_hud.gd" id="1_ts7ag"]
+[ext_resource type="Texture2D" uid="uid://brsit3ivlfx2m" path="res://art/mothra-1.png.png" id="2_ctak1"]
+[ext_resource type="FontFile" uid="uid://cd4ptjlb7f2il" path="res://art/jersey.15.ttf" id="2_qupsf"]
+[ext_resource type="Texture2D" uid="uid://b4rpui5wucmq3" path="res://art/close.png" id="3_qupsf"]
+[ext_resource type="AudioStream" uid="uid://cfgi0x6iqfcpi" path="res://art/sounds/hover.ogg" id="6_jvccm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ctak1"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qupsf"]
+bg_color = Color(0.5568628, 0, 0.007843138, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_xaupi"]
+font_size = 10
+outline_size = 2
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 0.5764706)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xaupi"]
+bg_color = Color(9.62615e-07, 0.64488465, 0.7596888, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ts7ag"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ts7ag"]
+line_spacing = 1.0
+font = ExtResource("2_qupsf")
+font_size = 30
+font_color = Color(1, 1, 0.3882353, 1)
+outline_size = 1
+outline_color = Color(1, 1, 1, 0)
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 0.5764706)
+
+[sub_resource type="LabelSettings" id="LabelSettings_jvccm"]
+line_spacing = 1.0
+font = ExtResource("2_qupsf")
+font_size = 30
+outline_size = 1
+outline_color = Color(1, 1, 1, 0)
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 0.5764706)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jvccm"]
+bg_color = Color(0.003921569, 0.003921569, 0.003921569, 0.18431373)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 12.0
+expand_margin_top = 10.0
+expand_margin_right = 12.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_4fxgg"]
+line_spacing = 1.0
+font = ExtResource("2_qupsf")
+font_size = 70
+font_color = Color(0.742905, 0, 0.097069226, 1)
+outline_size = 1
+outline_color = Color(1, 1, 1, 0)
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 0.5764706)
+
+[node name="gameHUD" type="CanvasLayer" unique_id=496643901 groups=["gameHUD"]]
+script = ExtResource("1_ts7ag")
+
+[node name="Control" type="Control" parent="." unique_id=102124967]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1228.0
+offset_bottom = 690.0
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=1405911493]
+texture_filter = 1
+layout_mode = 0
+offset_left = 17.0
+offset_top = 15.0
+offset_right = 107.0
+offset_bottom = 105.0
+texture = ExtResource("1_2xjd5")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Button" type="Button" parent="Control" unique_id=586219487]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 105.0
+offset_bottom = 105.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_ctak1")
+
+[node name="ProgressBar" type="ProgressBar" parent="Control" unique_id=793605354]
+layout_mode = 0
+offset_left = 114.0
+offset_top = 29.0
+offset_right = 356.0
+offset_bottom = 52.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_qupsf")
+max_value = 200.0
+value = 200.0
+rounded = true
+show_percentage = false
+
+[node name="Label" type="Label" parent="Control/ProgressBar" unique_id=453589049]
+layout_mode = 0
+offset_top = -18.0
+offset_right = 49.0
+offset_bottom = 1.0
+text = "GODZILLA"
+label_settings = SubResource("LabelSettings_xaupi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Control" unique_id=2668961]
+texture_filter = 1
+layout_mode = 0
+offset_left = 114.0
+offset_top = 55.0
+offset_right = 164.0
+offset_bottom = 105.0
+texture = ExtResource("2_ctak1")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Control/TextureRect2" unique_id=339740453]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 31.0
+offset_right = 68.0
+offset_bottom = 50.0
+text = "1 "
+label_settings = SubResource("LabelSettings_xaupi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="Control" unique_id=1264654494]
+layout_mode = 0
+offset_left = 114.0
+offset_top = 55.0
+offset_right = 164.0
+offset_bottom = 105.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_ctak1")
+
+[node name="ProgressBar2" type="ProgressBar" parent="Control" unique_id=404755869]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 68.0
+offset_right = 355.0
+offset_bottom = 105.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_xaupi")
+value = 100.0
+rounded = true
+show_percentage = false
+
+[node name="Label" type="Label" parent="Control/ProgressBar2" unique_id=1699359518]
+layout_mode = 0
+offset_top = -18.0
+offset_right = 49.0
+offset_bottom = 1.0
+text = "ATOMIC BREATH"
+label_settings = SubResource("LabelSettings_xaupi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Control/ProgressBar2" unique_id=562058293]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 18.0
+offset_right = 199.0
+offset_bottom = 37.0
+text = "F"
+label_settings = SubResource("LabelSettings_xaupi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button3" type="Button" parent="Control" unique_id=825281253]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1168.0
+offset_top = 8.0
+offset_right = 1211.0
+offset_bottom = 48.0
+scale = Vector2(1.2, 1.2)
+theme_override_styles/normal = SubResource("StyleBoxFlat_ts7ag")
+icon = ExtResource("3_qupsf")
+icon_alignment = 1
+
+[node name="Label2" type="Label" parent="Control" unique_id=924745594]
+layout_mode = 0
+offset_left = 994.0
+offset_top = 25.0
+offset_right = 1095.0
+offset_bottom = 56.0
+text = "COINS : 0"
+label_settings = SubResource("LabelSettings_ts7ag")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Control" unique_id=489493706]
+layout_mode = 0
+offset_left = 996.0
+offset_top = 61.0
+offset_right = 1097.0
+offset_bottom = 92.0
+text = "SCORE : 0"
+label_settings = SubResource("LabelSettings_jvccm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=621202304]
+process_mode = 3
+visible = false
+layout_mode = 0
+offset_right = 1228.0
+offset_bottom = 693.0
+color = Color(0.12941177, 0.12941177, 0.12941177, 0.41568628)
+
+[node name="CenterContainer" type="CenterContainer" parent="Control/ColorRect" unique_id=47648320]
+layout_mode = 0
+offset_right = 1228.0
+offset_bottom = 692.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ColorRect/CenterContainer" unique_id=811995214]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="resumeBtn" type="Button" parent="Control/ColorRect/CenterContainer/VBoxContainer" unique_id=1810265054]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_qupsf")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_jvccm")
+text = "RESUME"
+
+[node name="mainMenuBtn" type="Button" parent="Control/ColorRect/CenterContainer/VBoxContainer" unique_id=1835565102]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_qupsf")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_jvccm")
+text = "MAIN MENU"
+
+[node name="closeGameBtn" type="Button" parent="Control/ColorRect/CenterContainer/VBoxContainer" unique_id=1987301414]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_qupsf")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_jvccm")
+text = "CLOSE GAME"
+
+[node name="gameOverMenu" type="ColorRect" parent="Control" unique_id=1627990504]
+process_mode = 3
+visible = false
+layout_mode = 0
+offset_right = 1235.0
+offset_bottom = 693.0
+color = Color(0.043137256, 0.043137256, 0.043137256, 0.5568628)
+
+[node name="Label4" type="Label" parent="Control/gameOverMenu" unique_id=1156643948]
+layout_mode = 0
+offset_left = 352.0
+offset_top = 102.0
+offset_right = 850.0
+offset_bottom = 173.0
+text = "GODZILLA DEFEATED !"
+label_settings = SubResource("LabelSettings_4fxgg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="retryBtn" type="Button" parent="Control/gameOverMenu" unique_id=222414034]
+texture_filter = 1
+layout_mode = 0
+offset_left = 543.0
+offset_top = 301.0
+offset_right = 660.0
+offset_bottom = 346.0
+theme_override_fonts/font = ExtResource("2_qupsf")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_jvccm")
+text = "RETRY"
+
+[node name="mainMenuBtn" type="Button" parent="Control/gameOverMenu" unique_id=1108617993]
+texture_filter = 1
+layout_mode = 0
+offset_left = 520.0
+offset_top = 376.0
+offset_right = 681.0
+offset_bottom = 421.0
+theme_override_fonts/font = ExtResource("2_qupsf")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_jvccm")
+text = "MAIN MENU"
+
+[node name="hoverSoundPlayer" type="AudioStreamPlayer" parent="." unique_id=1699754073]
+stream = ExtResource("6_jvccm")
+
+[connection signal="mouse_entered" from="Control/Button3" to="." method="_on_button_3_mouse_entered"]
+[connection signal="pressed" from="Control/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="mouse_entered" from="Control/ColorRect/CenterContainer/VBoxContainer/resumeBtn" to="." method="_on_resume_btn_mouse_entered"]
+[connection signal="pressed" from="Control/ColorRect/CenterContainer/VBoxContainer/resumeBtn" to="." method="_on_resume_btn_pressed"]
+[connection signal="mouse_entered" from="Control/ColorRect/CenterContainer/VBoxContainer/mainMenuBtn" to="." method="_on_main_menu_btn_mouse_entered"]
+[connection signal="pressed" from="Control/ColorRect/CenterContainer/VBoxContainer/mainMenuBtn" to="." method="_on_main_menu_btn_pressed"]
+[connection signal="mouse_entered" from="Control/ColorRect/CenterContainer/VBoxContainer/closeGameBtn" to="." method="_on_close_game_btn_mouse_entered"]
+[connection signal="pressed" from="Control/ColorRect/CenterContainer/VBoxContainer/closeGameBtn" to="." method="_on_close_game_btn_pressed"]
+[connection signal="mouse_entered" from="Control/gameOverMenu/retryBtn" to="." method="_on_retry_btn_mouse_entered"]
+[connection signal="pressed" from="Control/gameOverMenu/retryBtn" to="." method="_on_retry_btn_pressed"]
+[connection signal="mouse_entered" from="Control/gameOverMenu/mainMenuBtn" to="." method="_on_main_menu_btn_mouse_entered"]
+[connection signal="pressed" from="Control/gameOverMenu/mainMenuBtn" to="." method="_on_main_menu_btn_pressed"]

@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://brfka7jpduihy"]
+
+[ext_resource type="Script" uid="uid://c1kk0wm4tx5ww" path="res://scripts/normal_power.gd" id="1_o0ur0"]
+[ext_resource type="Texture2D" uid="uid://dy5p5ahycwevn" path="res://art/godzilla/New Piskel (3)-1.png.png" id="1_qpe65"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o0ur0"]
+size = Vector2(62, 122)
+
+[node name="normal_power" type="Area2D" unique_id=1928772886]
+script = ExtResource("1_o0ur0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1012983119]
+texture_filter = 1
+rotation = 0.19198622
+scale = Vector2(4, 5)
+texture = ExtResource("1_qpe65")
+
+[node name="tailHit" type="Area2D" parent="." unique_id=1006655579 groups=["tail"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tailHit" unique_id=1510796310]
+position = Vector2(21, -3)
+shape = SubResource("RectangleShape2D_o0ur0")
+
+[connection signal="area_entered" from="tailHit" to="." method="_on_tail_hit_area_entered"]
+[connection signal="body_entered" from="tailHit" to="." method="_on_tail_hit_body_entered"]

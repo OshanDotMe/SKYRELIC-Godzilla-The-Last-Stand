@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://d2t64bxm60bqf"]
+
+[ext_resource type="Texture2D" uid="uid://dfdw8e7skoqp1" path="res://art/kingkong/rock.png" id="1_erqx7"]
+[ext_resource type="Script" uid="uid://qvwice7g7oyf" path="res://scripts/rock.gd" id="1_nbteb"]
+[ext_resource type="Texture2D" uid="uid://bwijq70fx4a86" path="res://art/kingkong/rock_destroy.png" id="3_ibhwe"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ibhwe"]
+radius = 30.0
+
+[node name="rock" type="Area2D" unique_id=1702627284]
+script = ExtResource("1_nbteb")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1702668156]
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = ExtResource("1_erqx7")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=81938804]
+visible = false
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("3_ibhwe")
+
+[node name="rockHit" type="Area2D" parent="." unique_id=1070135478 groups=["rock"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rockHit" unique_id=305890218]
+shape = SubResource("CircleShape2D_ibhwe")
+
+[connection signal="area_entered" from="rockHit" to="." method="_on_rock_hit_area_entered"]

@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://c851iprfuw2qu"]
+
+[sub_resource type="GDScript" id="GDScript_m5ysy"]
+script/source = "extends Node2D
+"
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_768bh"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(5, 1, 1)
+direction = Vector3(0, -2, 0)
+spread = 17.373
+initial_velocity_min = 20.0
+initial_velocity_max = 75.4
+gravity = Vector3(0, -10, 0)
+scale_max = 5.0
+scale_over_velocity_min = 308.03998
+scale_over_velocity_max = 308.03998
+color = Color(0.37413925, 0.37413928, 0.37413922, 1)
+hue_variation_min = -2.2351742e-08
+hue_variation_max = 0.27999997
+
+[node name="smoke" type="Node2D" unique_id=1289774523]
+script = SubResource("GDScript_m5ysy")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1353058194]
+amount = 50
+lifetime = 2.5
+process_material = SubResource("ParticleProcessMaterial_768bh")

@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://dg813715glkha"]
+
+[ext_resource type="Texture2D" uid="uid://cuci2ja3x8cwp" path="res://art/sky.svg" id="1_jhq5p"]
+[ext_resource type="Texture2D" uid="uid://cap3vlw1fgujp" path="res://art/bg.png" id="2_0f15l"]
+[ext_resource type="PackedScene" uid="uid://c851iprfuw2qu" path="res://components/smoke.tscn" id="2_qxlo7"]
+[ext_resource type="Texture2D" uid="uid://bocaa3whnhxrk" path="res://art/street_lamp.png" id="4_0f15l"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jhq5p"]
+load_path = "res://.godot/imported/tile1.png-85833f967644b5b124c64f899d97d781.ctex"
+
+[node name="skyBackground" type="Node2D" unique_id=1956694278]
+
+[node name="Parallax2DSky" type="Parallax2D" parent="." unique_id=50552816]
+scroll_offset = Vector2(-1178, 5)
+repeat_size = Vector2(1180, 0)
+autoscroll = Vector2(-30, 0)
+repeat_times = 60
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2DSky" unique_id=1392895299]
+modulate = Color(1, 0.9843137, 0.7921569, 1)
+texture_filter = 1
+position = Vector2(573, 197.99997)
+scale = Vector2(0.14837499, 0.1839458)
+texture = ExtResource("1_jhq5p")
+
+[node name="Parallax2DBelow" type="Parallax2D" parent="." unique_id=675547859]
+scroll_offset = Vector2(-1178, 810)
+repeat_size = Vector2(1180, 0)
+autoscroll = Vector2(-30, 0)
+repeat_times = 60
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2DBelow" unique_id=618144552]
+modulate = Color(1, 0.9843137, 0.7921569, 1)
+texture_filter = 1
+position = Vector2(583, -200.00003)
+scale = Vector2(20, 6.215)
+texture = SubResource("CompressedTexture2D_jhq5p")
+
+[node name="Parallax2DMiddle2" type="Parallax2D" parent="." unique_id=1832718737]
+modulate = Color(0.51955754, 0.51955754, 0.51955754, 1)
+scroll_scale = Vector2(1.4, 1.4)
+scroll_offset = Vector2(-98, 296)
+repeat_size = Vector2(760, 0)
+repeat_times = 60
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2DMiddle2" unique_id=1601562362]
+texture_filter = 1
+scale = Vector2(6, 6)
+texture = ExtResource("2_0f15l")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=82601929]
+scroll_offset = Vector2(100, 0)
+repeat_size = Vector2(500, 0)
+repeat_times = 100
+
+[node name="smoke" parent="Parallax2D" unique_id=1289774523 instance=ExtResource("2_qxlo7")]
+position = Vector2(143, 410)
+
+[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=1257183050]
+scroll_offset = Vector2(10, 0)
+repeat_size = Vector2(500, 0)
+repeat_times = 100
+
+[node name="smoke" parent="Parallax2D2" unique_id=1860702369 instance=ExtResource("2_qxlo7")]
+position = Vector2(143, 410)
+
+[node name="Parallax2DMiddle" type="Parallax2D" parent="." unique_id=444640458]
+scroll_offset = Vector2(7658, 400)
+repeat_size = Vector2(760, 0)
+repeat_times = 60
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2DMiddle" unique_id=34309315]
+texture_filter = 1
+scale = Vector2(6, 6)
+texture = ExtResource("2_0f15l")
+
+[node name="light" type="Parallax2D" parent="." unique_id=733334320]
+texture_filter = 1
+repeat_size = Vector2(300, 0)
+repeat_times = 50
+
+[node name="Sprite2D" type="Sprite2D" parent="light" unique_id=1121382649]
+texture_filter = 1
+position = Vector2(234, 487)
+texture = ExtResource("4_0f15l")

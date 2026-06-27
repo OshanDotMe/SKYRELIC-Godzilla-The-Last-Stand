@@ -1,0 +1,215 @@
+[gd_scene format=3 uid="uid://bjoixcjbdvu7p"]
+
+[ext_resource type="Script" uid="uid://c6rsls3qnticn" path="res://scripts/main_menu.gd" id="1_bx5kc"]
+[ext_resource type="Texture2D" uid="uid://crktm64xjueyl" path="res://art/bgb.png" id="2_bx5kc"]
+[ext_resource type="FontFile" uid="uid://cd4ptjlb7f2il" path="res://art/jersey.15.ttf" id="2_uw3gq"]
+[ext_resource type="Texture2D" uid="uid://c83apep1qk1k" path="res://art/New Piskel-1.png (3).png" id="4_r7yfp"]
+[ext_resource type="AudioStream" uid="uid://cfgi0x6iqfcpi" path="res://art/sounds/hover.ogg" id="5_r7yfp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yxky1"]
+bg_color = Color(0.2509804, 0.2509804, 0.2509804, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gr76v"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_76g86"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bx5kc"]
+font = ExtResource("2_uw3gq")
+font_size = 200
+
+[sub_resource type="LabelSettings" id="LabelSettings_r7yfp"]
+line_spacing = 50.0
+paragraph_spacing = 10.0
+font = ExtResource("2_uw3gq")
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_yxky1"]
+line_spacing = 5.0
+paragraph_spacing = 10.0
+font = ExtResource("2_uw3gq")
+font_size = 40
+
+[node name="mainMenu" type="Control" unique_id=1863480636]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_bx5kc")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=594332447]
+texture_filter = 1
+layout_mode = 0
+offset_right = 1235.0
+offset_bottom = 694.0
+texture = ExtResource("2_bx5kc")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="startButton" type="Button" parent="." unique_id=694075876]
+texture_filter = 1
+layout_mode = 0
+offset_left = 44.0
+offset_top = 262.0
+offset_right = 294.0
+offset_bottom = 312.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_yxky1")
+
+[node name="shopButton" type="Button" parent="." unique_id=1153103102]
+texture_filter = 1
+layout_mode = 0
+offset_left = 44.0
+offset_top = 324.0
+offset_right = 294.0
+offset_bottom = 374.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_gr76v")
+
+[node name="howToPlayButton" type="Button" parent="." unique_id=953002528]
+texture_filter = 1
+layout_mode = 0
+offset_left = 44.0
+offset_top = 386.0
+offset_right = 294.0
+offset_bottom = 436.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_76g86")
+
+[node name="leaderboardButton" type="Button" parent="." unique_id=1031248718]
+texture_filter = 1
+layout_mode = 0
+offset_left = 44.0
+offset_top = 449.0
+offset_right = 294.0
+offset_bottom = 499.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_76g86")
+
+[node name="quitbtn" type="Button" parent="." unique_id=2110683926]
+texture_filter = 1
+layout_mode = 0
+offset_left = 44.0
+offset_top = 512.0
+offset_right = 294.0
+offset_bottom = 562.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_76g86")
+
+[node name="Label" type="Label" parent="." unique_id=2039027433]
+texture_filter = 1
+layout_mode = 0
+offset_left = 35.0
+offset_top = 7.0
+offset_right = 665.0
+offset_bottom = 208.0
+text = "GODZILLA"
+label_settings = SubResource("LabelSettings_bx5kc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="." unique_id=1775876089]
+texture_filter = 1
+layout_mode = 0
+offset_left = 155.0
+offset_top = 168.0
+offset_right = 557.0
+offset_bottom = 219.0
+text = "T H E  L A S T  S T A N D"
+label_settings = SubResource("LabelSettings_r7yfp")
+
+[node name="muteButton" type="TextureButton" parent="." unique_id=1365471085]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1192.0
+offset_top = 9.0
+offset_right = 1232.0
+offset_bottom = 49.0
+texture_normal = ExtResource("4_r7yfp")
+
+[node name="Label3" type="Label" parent="." unique_id=1401633361]
+texture_filter = 1
+layout_mode = 0
+offset_left = 50.0
+offset_top = 267.0
+offset_right = 290.0
+offset_bottom = 308.0
+text = "START GAME"
+label_settings = SubResource("LabelSettings_yxky1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="." unique_id=1080965411]
+texture_filter = 1
+layout_mode = 0
+offset_left = 50.0
+offset_top = 328.0
+offset_right = 290.0
+offset_bottom = 369.0
+text = "SHOP"
+label_settings = SubResource("LabelSettings_yxky1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="." unique_id=1858648047]
+texture_filter = 1
+layout_mode = 0
+offset_left = 50.0
+offset_top = 391.0
+offset_right = 290.0
+offset_bottom = 432.0
+text = "HOW TO PLAY"
+label_settings = SubResource("LabelSettings_yxky1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="." unique_id=314297315]
+texture_filter = 1
+layout_mode = 0
+offset_left = 50.0
+offset_top = 453.0
+offset_right = 290.0
+offset_bottom = 494.0
+text = "LEADERBOARD"
+label_settings = SubResource("LabelSettings_yxky1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label7" type="Label" parent="." unique_id=1000110245]
+texture_filter = 1
+layout_mode = 0
+offset_left = 50.0
+offset_top = 516.0
+offset_right = 290.0
+offset_bottom = 557.0
+text = "QUIT GAME "
+label_settings = SubResource("LabelSettings_yxky1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="hoverSoundPlayer" type="AudioStreamPlayer" parent="." unique_id=1141174548]
+stream = ExtResource("5_r7yfp")
+
+[connection signal="mouse_entered" from="startButton" to="." method="_on_start_button_mouse_entered"]
+[connection signal="pressed" from="startButton" to="." method="_on_start_button_pressed"]
+[connection signal="mouse_entered" from="shopButton" to="." method="_on_shop_button_mouse_entered"]
+[connection signal="pressed" from="shopButton" to="." method="_on_shop_button_pressed"]
+[connection signal="mouse_entered" from="howToPlayButton" to="." method="_on_how_to_play_button_mouse_entered"]
+[connection signal="pressed" from="howToPlayButton" to="." method="_on_how_to_play_button_pressed"]
+[connection signal="mouse_entered" from="leaderboardButton" to="." method="_on_leaderboard_button_mouse_entered"]
+[connection signal="pressed" from="leaderboardButton" to="." method="_on_leaderboard_button_pressed"]
+[connection signal="mouse_entered" from="quitbtn" to="." method="_on_quitbtn_mouse_entered"]
+[connection signal="pressed" from="quitbtn" to="." method="_on_quitbtn_pressed"]
+[connection signal="mouse_entered" from="muteButton" to="." method="_on_mute_button_mouse_entered"]
+[connection signal="pressed" from="muteButton" to="." method="_on_mute_button_pressed"]

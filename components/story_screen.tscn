@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://kgv0pmu73y4n"]
+
+[ext_resource type="Script" uid="uid://tkanmpo3hx4w" path="res://scripts/story_screen.gd" id="1_2b4rf"]
+[ext_resource type="FontFile" uid="uid://cd4ptjlb7f2il" path="res://art/jersey.15.ttf" id="2_sucel"]
+[ext_resource type="AudioStream" uid="uid://lwt7n28ig4sa" path="res://art/sounds/storyTelling.mp3" id="3_sucel"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ginm7"]
+font = ExtResource("2_sucel")
+font_size = 25
+
+[node name="storyScreen" type="Control" unique_id=567880275]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1245.0
+offset_bottom = 699.0
+script = ExtResource("1_2b4rf")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=154062645]
+layout_mode = 0
+offset_right = 1254.0
+offset_bottom = 712.0
+color = Color(0, 0, 0, 0.58431375)
+
+[node name="storyLabel" type="RichTextLabel" parent="." unique_id=3788229]
+layout_mode = 0
+offset_top = 141.0
+offset_right = 1233.0
+offset_bottom = 737.0
+theme_override_fonts/normal_font = ExtResource("2_sucel")
+theme_override_font_sizes/normal_font_size = 30
+
+[node name="skipLabel" type="Label" parent="." unique_id=23150573]
+layout_mode = 0
+offset_left = 1021.0
+offset_top = 643.0
+offset_right = 1206.0
+offset_bottom = 669.0
+text = "Press Space to Skip"
+label_settings = SubResource("LabelSettings_ginm7")
+
+[node name="StoryTelling" type="AudioStreamPlayer" parent="." unique_id=1793084044]
+stream = ExtResource("3_sucel")
+volume_db = -15.0

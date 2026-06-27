@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://fcioho07ov1w"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sdffv"]
+load_path = "res://.godot/imported/New Piskel-1.png (1).png-4e41609e169cc122e0a149638d07bbe4.ctex"
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1lsq1"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(1000, -500, 0)
+angle_min = -91.49999
+angle_max = -91.49999
+direction = Vector3(-0.1, 5, 0)
+spread = 54.069
+initial_velocity_min = 432.3
+initial_velocity_max = 1000.0
+gravity = Vector3(0, 98, 0)
+
+[node name="RainSystem" type="Node2D" unique_id=877505712]
+
+[node name="GPUParticles2D6" type="GPUParticles2D" parent="." unique_id=1998403544]
+position = Vector2(-407, 440)
+amount = 1000
+texture = SubResource("CompressedTexture2D_sdffv")
+lifetime = 2.0
+process_material = SubResource("ParticleProcessMaterial_1lsq1")

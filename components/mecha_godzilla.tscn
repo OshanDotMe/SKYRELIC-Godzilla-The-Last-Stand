@@ -1,0 +1,249 @@
+[gd_scene format=3 uid="uid://d3nko3p32bfsl"]
+
+[ext_resource type="Script" uid="uid://vyqnbhhcrgd3" path="res://scripts/mecha_godzilla.gd" id="1_r8y8l"]
+[ext_resource type="Texture2D" uid="uid://dmh2t5d4k523a" path="res://art/mechagodzilla/dead.png" id="1_w7y5j"]
+[ext_resource type="Texture2D" uid="uid://e0krqn3cwktg" path="res://art/mechagodzilla/idle.png" id="2_r8y8l"]
+[ext_resource type="PackedScene" uid="uid://bgk0sl7gb5me2" path="res://components/missile.tscn" id="2_vkwgl"]
+[ext_resource type="PackedScene" uid="uid://c235crftcvvfs" path="res://components/proton_beam.tscn" id="3_lty1x"]
+[ext_resource type="Texture2D" uid="uid://cuxhoodef7rjj" path="res://art/mechagodzilla/attack.png" id="3_vkwgl"]
+[ext_resource type="Texture2D" uid="uid://l4nr5xagxqep" path="res://art/mechagodzilla/proton_beam.png" id="4_lty1x"]
+[ext_resource type="AudioStream" uid="uid://w7gwlmrg2nae" path="res://art/sounds/mecha_dead.ogg" id="8_1c88i"]
+[ext_resource type="AudioStream" uid="uid://b4a6xbsu3migq" path="res://art/sounds/mecha_idle.ogg" id="9_hxkjr"]
+[ext_resource type="AudioStream" uid="uid://cs7f3lpei80xs" path="res://art/sounds/mecha_missile.ogg" id="10_0utmj"]
+[ext_resource type="AudioStream" uid="uid://c8qwpnshn6qcr" path="res://art/sounds/mecha_proton_beam.ogg" id="11_367kr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gxahj"]
+atlas = ExtResource("1_w7y5j")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vph2v"]
+atlas = ExtResource("1_w7y5j")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vd35h"]
+atlas = ExtResource("2_r8y8l")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1c88i"]
+atlas = ExtResource("2_r8y8l")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxkjr"]
+atlas = ExtResource("3_vkwgl")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0utmj"]
+atlas = ExtResource("3_vkwgl")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_367kr"]
+atlas = ExtResource("3_vkwgl")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jbhvm"]
+atlas = ExtResource("3_vkwgl")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0mcew"]
+atlas = ExtResource("4_lty1x")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhyj0"]
+atlas = ExtResource("4_lty1x")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c1ubs"]
+atlas = ExtResource("4_lty1x")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_61xpx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gxahj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vph2v")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vd35h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1c88i")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hxkjr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0utmj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_367kr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jbhvm")
+}],
+"loop": false,
+"name": &"missle_attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0mcew")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xhyj0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c1ubs")
+}],
+"loop": false,
+"name": &"proton_beam",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w7y5j"]
+radius = 551.04443
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r8y8l"]
+size = Vector2(151, 158)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lty1x"]
+size = Vector2(354.75, 43)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lty1x"]
+bg_color = Color(0.5568628, 0, 0.007843138, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_gxahj"]
+font_size = 10
+outline_size = 2
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 0.5764706)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1c88i"]
+size = Vector2(150, 156)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hxkjr"]
+size = Vector2(2364, 1353)
+
+[node name="mechaGodzilla" type="CharacterBody2D" unique_id=163277989 groups=["enemy"]]
+script = ExtResource("1_r8y8l")
+missile_scene = ExtResource("2_vkwgl")
+proton_beam_scene = ExtResource("3_lty1x")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1800534747]
+rect = Rect2(-110, -153, 221, 244)
+
+[node name="body" type="Node2D" parent="." unique_id=1860566370]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="body" unique_id=1300319674]
+texture_filter = 1
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_61xpx")
+animation = &"idle"
+flip_h = true
+
+[node name="detectionArea" type="Area2D" parent="." unique_id=2126037066]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detectionArea" unique_id=1730647018]
+shape = SubResource("CircleShape2D_w7y5j")
+
+[node name="attackPoint" type="Marker2D" parent="." unique_id=1565492277]
+position = Vector2(-13, -93)
+
+[node name="protonBeam" type="Marker2D" parent="." unique_id=1851163713]
+position = Vector2(-29, -46)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=202877141 groups=["enemy", "mBody"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1711808965 groups=["enemy", "mBody"]]
+position = Vector2(1.5, -1)
+shape = SubResource("RectangleShape2D_r8y8l")
+debug_color = Color(0.9919885, 0, 0.26442012, 0.41960785)
+
+[node name="blockWall" type="StaticBody2D" parent="." unique_id=165117236]
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="blockWall" unique_id=2040655362]
+position = Vector2(-250.625, 57)
+shape = SubResource("RectangleShape2D_lty1x")
+debug_color = Color(0.97099406, 0.17267302, 0, 0.41960785)
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=995762291]
+offset_left = -79.0
+offset_top = -125.0
+offset_right = 97.0
+offset_bottom = -108.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_lty1x")
+max_value = 300.0
+value = 300.0
+rounded = true
+show_percentage = false
+
+[node name="Label" type="Label" parent="ProgressBar" unique_id=664223076]
+layout_mode = 0
+offset_top = -18.0
+offset_right = 40.0
+offset_bottom = -1.0
+text = "MECHAGODZILLA"
+label_settings = SubResource("LabelSettings_gxahj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="sounds" type="Node2D" parent="." unique_id=855939248]
+
+[node name="MechaDead" type="AudioStreamPlayer" parent="sounds" unique_id=1012914802]
+stream = ExtResource("8_1c88i")
+
+[node name="MechaMissile" type="AudioStreamPlayer" parent="sounds" unique_id=677910513]
+stream = ExtResource("10_0utmj")
+
+[node name="MechaIdle" type="AudioStreamPlayer" parent="sounds" unique_id=512269609]
+stream = ExtResource("9_hxkjr")
+
+[node name="MechaProtonBeam" type="AudioStreamPlayer" parent="sounds" unique_id=1185284790]
+stream = ExtResource("11_367kr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1173862433 groups=["enemy"]]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_1c88i")
+debug_color = Color(0, 0.6250169, 0.52678585, 0.41960785)
+
+[node name="spawnStopTrigger" type="Area2D" parent="." unique_id=44609084]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spawnStopTrigger" unique_id=1423818233]
+position = Vector2(-507, -6.5)
+shape = SubResource("RectangleShape2D_hxkjr")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=882167253]
+offset_left = -540.0
+offset_top = 77.0
+offset_right = -428.0
+offset_bottom = 93.0
+color = Color(1, 0.6156863, 0.46666667, 0.49411765)
+
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="body_exited" from="detectionArea" to="." method="_on_detection_area_body_exited"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="spawnStopTrigger" to="." method="_on_spawn_stop_trigger_body_entered"]
+[connection signal="body_exited" from="spawnStopTrigger" to="." method="_on_spawn_stop_trigger_body_exited"]

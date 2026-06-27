@@ -1,0 +1,224 @@
+[gd_scene format=3 uid="uid://i0u4yjbjb0l1"]
+
+[ext_resource type="Script" uid="uid://det3lupyv6elp" path="res://scripts/player.gd" id="1_51jd6"]
+[ext_resource type="PackedScene" uid="uid://7004ehnlm6q0" path="res://components/mothra.tscn" id="2_7ta67"]
+[ext_resource type="Texture2D" uid="uid://hbvui1785xd5" path="res://art/godzilla/godzilla_tail.png" id="3_eju5v"]
+[ext_resource type="Texture2D" uid="uid://5amiqm56ljxi" path="res://art/godzilla/godzilla_idle.png" id="3_pir3r"]
+[ext_resource type="Texture2D" uid="uid://cybmgjnpklhrf" path="res://art/godzilla/godzilla_atomic.png" id="4_7ta67"]
+[ext_resource type="AudioStream" uid="uid://ce47m181ksuxb" path="res://art/sounds/Godzilla Atomic Breath.ogg" id="5_kuobi"]
+[ext_resource type="Texture2D" uid="uid://dw3gfvr05eq5d" path="res://art/godzilla/roar.png" id="6_1wqow"]
+[ext_resource type="Texture2D" uid="uid://b4bg5xil2yjic" path="res://art/godzilla/godzilla_walking.png" id="6_jhk7o"]
+[ext_resource type="AudioStream" uid="uid://bt2k0tfk4e851" path="res://art/sounds/Godzilla _walking.ogg" id="8_couud"]
+[ext_resource type="AudioStream" uid="uid://bmc3w2y1jn306" path="res://art/sounds/tail_swip.mp3" id="8_pir3r"]
+[ext_resource type="Script" uid="uid://cp6rpc00f7tso" path="res://scripts/camera_2d.gd" id="10_mm1xv"]
+[ext_resource type="AudioStream" uid="uid://b4qofa1m4k6k4" path="res://art/sounds/hit.ogg" id="10_qe8hj"]
+[ext_resource type="AudioStream" uid="uid://c52tikxvr8bvl" path="res://art/sounds/godzilla_hit.ogg" id="11_eju5v"]
+[ext_resource type="AudioStream" uid="uid://wh4yeacc1o0e" path="res://art/sounds/godzilla_idle.ogg" id="12_7ta67"]
+[ext_resource type="Script" uid="uid://bqoc1xfqhyi07" path="res://scripts/enemy_spawner.gd" id="14_jhk7o"]
+[ext_resource type="AudioStream" uid="uid://ck0w06yiujsq1" path="res://art/sounds/godzilla_victory.ogg" id="16_6qb5m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mm1xv"]
+size = Vector2(152, 167)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1wqow"]
+atlas = ExtResource("3_eju5v")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kn8w6"]
+atlas = ExtResource("3_eju5v")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eaetu"]
+atlas = ExtResource("4_7ta67")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1dyya"]
+atlas = ExtResource("4_7ta67")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t8b0b"]
+atlas = ExtResource("4_7ta67")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ntxa4"]
+atlas = ExtResource("4_7ta67")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6qb5m"]
+atlas = ExtResource("3_pir3r")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p3qei"]
+atlas = ExtResource("6_1wqow")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_alqpi"]
+atlas = ExtResource("6_1wqow")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6esqw"]
+atlas = ExtResource("6_jhk7o")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8pb0k"]
+atlas = ExtResource("6_jhk7o")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hoi4b"]
+atlas = ExtResource("6_jhk7o")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kuobi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1wqow")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kn8w6")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eaetu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1dyya")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t8b0b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ntxa4")
+}],
+"loop": false,
+"name": &"attomic_breath",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6qb5m")
+}],
+"loop": true,
+"name": &"idel",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p3qei")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_alqpi")
+}],
+"loop": false,
+"name": &"roar",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6esqw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8pb0k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hoi4b")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5odhx"]
+size = Vector2(175, 165)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7ta67"]
+radius = 155.00322
+
+[node name="player" type="CharacterBody2D" unique_id=719159684 groups=["player"]]
+z_index = 1
+collision_layer = 3
+collision_mask = 13
+script = ExtResource("1_51jd6")
+mothra_scene = ExtResource("2_7ta67")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=561954910]
+position = Vector2(-11, -1.5)
+shape = SubResource("RectangleShape2D_mm1xv")
+debug_color = Color(0.98991174, 0, 0.29034567, 0.41960785)
+
+[node name="body" type="Node2D" parent="." unique_id=1216824807]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="body" unique_id=54396135]
+texture_filter = 1
+position = Vector2(0, 2)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_kuobi")
+animation = &"idel"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=792075482 groups=["body"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1855922182]
+position = Vector2(-0.5, -1.5)
+shape = SubResource("RectangleShape2D_5odhx")
+
+[node name="breathSpawnPointR" type="Node2D" parent="." unique_id=653200498]
+position = Vector2(77, -51)
+
+[node name="sound" type="Node2D" parent="." unique_id=134455248]
+
+[node name="GodzillaAtomicBreath" type="AudioStreamPlayer" parent="sound" unique_id=130328120]
+stream = ExtResource("5_kuobi")
+volume_db = -7.0
+
+[node name="GodzillaWalking" type="AudioStreamPlayer" parent="sound" unique_id=1500555833]
+stream = ExtResource("8_couud")
+volume_db = -15.0
+pitch_scale = 1.8
+mix_target = 1
+
+[node name="TailSwip" type="AudioStreamPlayer" parent="sound" unique_id=139005225]
+stream = ExtResource("8_pir3r")
+
+[node name="Hit" type="AudioStreamPlayer" parent="sound" unique_id=1079595611]
+stream = ExtResource("10_qe8hj")
+
+[node name="GodzillaHit" type="AudioStreamPlayer" parent="sound" unique_id=1328125351]
+stream = ExtResource("11_eju5v")
+volume_db = -14.0
+
+[node name="GodzillaIdle" type="AudioStreamPlayer" parent="sound" unique_id=267842783]
+stream = ExtResource("12_7ta67")
+volume_db = -5.0
+
+[node name="tailAttackSpawnpoint" type="Marker2D" parent="." unique_id=1637586302]
+position = Vector2(62, 22)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2073812251]
+position = Vector2(123, -94)
+script = ExtResource("10_mm1xv")
+
+[node name="radiationAura" type="Area2D" parent="." unique_id=440568041]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="radiationAura" unique_id=1552367432]
+shape = SubResource("CircleShape2D_7ta67")
+
+[node name="enemySpawner" type="Node2D" parent="." unique_id=713216100]
+position = Vector2(510, 85)
+script = ExtResource("14_jhk7o")
+
+[node name="Timer" type="Timer" parent="enemySpawner" unique_id=123306336]
+wait_time = 3.0
+autostart = true
+
+[node name="roarPlayer" type="AudioStreamPlayer" parent="." unique_id=464228877]
+stream = ExtResource("16_6qb5m")
+volume_db = -3.0
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="radiationAura" to="." method="_on_radiation_aura_body_entered"]
+[connection signal="body_exited" from="radiationAura" to="." method="_on_radiation_aura_body_exited"]

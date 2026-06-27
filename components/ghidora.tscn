@@ -1,0 +1,234 @@
+[gd_scene format=3 uid="uid://dgr10e86yqyu7"]
+
+[ext_resource type="Script" uid="uid://nggvsuuxunyy" path="res://scripts/ghidora.gd" id="1_sowo5"]
+[ext_resource type="Texture2D" uid="uid://dc8e6i8klaedc" path="res://art/ghidorah/idle.png" id="2_8q1l0"]
+[ext_resource type="PackedScene" uid="uid://b6c6l263t8vfe" path="res://components/mouth_lightning.tscn" id="2_nbjfd"]
+[ext_resource type="PackedScene" uid="uid://dr3xqwe1moqgw" path="res://components/wing_lightning.tscn" id="3_pkfwe"]
+[ext_resource type="PackedScene" uid="uid://jqnrw2ntbf1x" path="res://components/sky_lightning.tscn" id="4_04sdi"]
+[ext_resource type="Texture2D" uid="uid://bc4j7svc0olap" path="res://art/ghidorah/wing_attack.png" id="4_nbjfd"]
+[ext_resource type="Texture2D" uid="uid://bx52ef7i144lm" path="res://art/ghidorah/dead.png" id="6_8hgo2"]
+[ext_resource type="Texture2D" uid="uid://dp4kqq0qxwy30" path="res://art/ghidorah/mouth_attack.png" id="6_nbjfd"]
+[ext_resource type="AudioStream" uid="uid://c5nnh5amdn8a3" path="res://art/sounds/ghidorah_attack.ogg" id="8_5xe6m"]
+[ext_resource type="AudioStream" uid="uid://cbh1bxl7qui5x" path="res://art/sounds/ghidorah_damage.ogg" id="9_8hgo2"]
+[ext_resource type="AudioStream" uid="uid://0ax0dbwbkgfu" path="res://art/sounds/ghidorah_idle.ogg" id="10_5a7ic"]
+[ext_resource type="AudioStream" uid="uid://b5343pgl7pvbk" path="res://art/sounds/ghidora_wing.ogg" id="11_r1g3d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8hgo2"]
+size = Vector2(224, 213)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r1g3d"]
+atlas = ExtResource("2_8q1l0")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nny8n"]
+atlas = ExtResource("6_8hgo2")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pkfwe"]
+atlas = ExtResource("2_8q1l0")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04sdi"]
+atlas = ExtResource("2_8q1l0")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v671s"]
+atlas = ExtResource("6_nbjfd")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xe6m"]
+atlas = ExtResource("6_nbjfd")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8hgo2"]
+atlas = ExtResource("4_nbjfd")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5a7ic"]
+atlas = ExtResource("2_8q1l0")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r1g3d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r1g3d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nny8n")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pkfwe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_04sdi")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v671s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5xe6m")
+}],
+"loop": false,
+"name": &"light_attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8hgo2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5a7ic")
+}],
+"loop": false,
+"name": &"wing_attack",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nny8n"]
+radius = 525.0238
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nbjfd"]
+size = Vector2(223, 212)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5xe6m"]
+size = Vector2(397.75, 43)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5xe6m"]
+bg_color = Color(0.5568628, 0, 0.007843138, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_8hgo2"]
+font_size = 10
+outline_size = 2
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 0.5764706)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5a7ic"]
+size = Vector2(2364, 1353)
+
+[node name="ghidora" type="CharacterBody2D" unique_id=1757642014 groups=["enemy"]]
+process_mode = 1
+script = ExtResource("1_sowo5")
+mouth_lightning_scene = ExtResource("2_nbjfd")
+wing_attack_scene = ExtResource("3_pkfwe")
+sky_lightning_scene = ExtResource("4_04sdi")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=107169299]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=800376027 groups=["enemy"]]
+position = Vector2(16, 11)
+shape = SubResource("RectangleShape2D_8hgo2")
+debug_color = Color(0.91127115, 0.000103577375, 0.7289434, 0.41960785)
+
+[node name="body" type="Node2D" parent="." unique_id=404161649]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="body" unique_id=420098491]
+texture_filter = 1
+scale = Vector2(2.3, 2.3)
+sprite_frames = SubResource("SpriteFrames_r1g3d")
+animation = &"idle"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=142969961]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1732729103]
+shape = SubResource("CircleShape2D_nny8n")
+
+[node name="mouthPoint" type="Marker2D" parent="." unique_id=102236677]
+position = Vector2(12, -12)
+rotation = 0.026000725
+
+[node name="mouthPoint2" type="Marker2D" parent="." unique_id=455825728]
+position = Vector2(-24, -40)
+
+[node name="mouthPoint3" type="Marker2D" parent="." unique_id=1932291137]
+position = Vector2(-84, 8)
+
+[node name="wingPoint" type="Marker2D" parent="." unique_id=1234368024]
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=1787201340 groups=["enemy", "gBody"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=914861191]
+position = Vector2(16.5, 13)
+shape = SubResource("RectangleShape2D_nbjfd")
+
+[node name="sounds" type="Node2D" parent="." unique_id=41884521]
+
+[node name="GhidorahAttack" type="AudioStreamPlayer" parent="sounds" unique_id=1803321122]
+stream = ExtResource("8_5xe6m")
+
+[node name="GhidorahDamage" type="AudioStreamPlayer" parent="sounds" unique_id=1116230690]
+stream = ExtResource("9_8hgo2")
+
+[node name="GhidorahIdle" type="AudioStreamPlayer" parent="sounds" unique_id=56360331]
+stream = ExtResource("10_5a7ic")
+
+[node name="GhidoraWing" type="AudioStreamPlayer" parent="sounds" unique_id=233020581]
+stream = ExtResource("11_r1g3d")
+
+[node name="blockWall" type="StaticBody2D" parent="." unique_id=2092952947]
+position = Vector2(-22, 41)
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="blockWall" unique_id=1860789185]
+position = Vector2(-272.125, 57)
+shape = SubResource("RectangleShape2D_5xe6m")
+debug_color = Color(0.97099406, 0.17267302, 0, 0.41960785)
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1440490222]
+offset_left = -79.0
+offset_top = -125.0
+offset_right = 97.0
+offset_bottom = -108.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_5xe6m")
+max_value = 400.0
+value = 400.0
+rounded = true
+show_percentage = false
+
+[node name="Label" type="Label" parent="ProgressBar" unique_id=267646353]
+layout_mode = 0
+offset_top = -18.0
+offset_right = 40.0
+offset_bottom = -1.0
+text = "GHIDORAH"
+label_settings = SubResource("LabelSettings_8hgo2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="spawnStopTrigger" type="Area2D" parent="." unique_id=1830117341]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spawnStopTrigger" unique_id=797095280]
+position = Vector2(-507, -6.5)
+shape = SubResource("RectangleShape2D_5a7ic")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1714767628]
+offset_left = -510.0
+offset_top = 119.0
+offset_right = -407.0
+offset_bottom = 135.0
+color = Color(1, 0.6156863, 0.46666667, 0.49411765)
+
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="area_entered" from="Area2D2" to="." method="_on_area_2d_2_area_entered"]
+[connection signal="body_entered" from="spawnStopTrigger" to="." method="_on_spawn_stop_trigger_body_entered"]

@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dip1pihperx1t"]
+
+[ext_resource type="Script" uid="uid://c62kwv8en2vhh" path="res://scripts/splashscreen.gd" id="1_f6mpy"]
+[ext_resource type="VideoStream" uid="uid://cevim2y8h7gr2" path="res://art/1.ogv" id="2_f6mpy"]
+[ext_resource type="FontFile" uid="uid://cd4ptjlb7f2il" path="res://art/jersey.15.ttf" id="3_cscvc"]
+
+[node name="splashscreen" type="Control" unique_id=1564526167]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1231.0
+offset_bottom = 691.0
+script = ExtResource("1_f6mpy")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1753173820]
+layout_mode = 0
+offset_right = 1236.0
+offset_bottom = 698.0
+color = Color(0, 0, 0, 1)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="ColorRect" unique_id=977687791]
+layout_mode = 0
+offset_right = 1231.0
+offset_bottom = 694.0
+stream = ExtResource("2_f6mpy")
+autoplay = true
+expand = true
+
+[node name="creditsLabel" type="RichTextLabel" parent="ColorRect" unique_id=2032873882]
+visible = false
+layout_mode = 0
+offset_left = 106.0
+offset_right = 1123.0
+offset_bottom = 691.0
+theme_override_fonts/normal_font = ExtResource("3_cscvc")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[center]This is a fan made 2D Godzilla game developed by Oshan Adithya. All sprites, programming, and sound design were custom made.[/center]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="finished" from="ColorRect/VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

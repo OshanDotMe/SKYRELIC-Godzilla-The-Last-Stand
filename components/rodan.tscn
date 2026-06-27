@@ -1,0 +1,201 @@
+[gd_scene format=3 uid="uid://bgo7atdmdhpdr"]
+
+[ext_resource type="Script" uid="uid://daryqcmuj0uho" path="res://scripts/rodan.gd" id="1_d12bp"]
+[ext_resource type="Texture2D" uid="uid://dky47asgiyy1b" path="res://art/rodan/flying.png" id="2_ia064"]
+[ext_resource type="Texture2D" uid="uid://baryfrewna11c" path="res://art/rodan/attack.png" id="2_s07pp"]
+[ext_resource type="Texture2D" uid="uid://da2pudenkqu4y" path="res://art/rodan/die.png" id="3_agxex"]
+[ext_resource type="Texture2D" uid="uid://dtiwftpvvvlbj" path="res://art/rodan/idle.png" id="3_ia064"]
+[ext_resource type="AudioStream" uid="uid://dfgr1qencsxcl" path="res://art/sounds/rodan_fly.ogg" id="5_4m3ow"]
+[ext_resource type="AudioStream" uid="uid://dquv0l7yxxgpn" path="res://art/sounds/rodan_fire.ogg" id="6_dcgwr"]
+[ext_resource type="AudioStream" uid="uid://crvaljrhdqma5" path="res://art/sounds/rodan_hit.ogg" id="7_nk5s1"]
+[ext_resource type="AudioStream" uid="uid://qjkefs5hpm5d" path="res://art/sounds/rodan_idle.ogg" id="8_agxex"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s07pp"]
+atlas = ExtResource("2_s07pp")
+region = Rect2(0, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4m3ow"]
+atlas = ExtResource("2_s07pp")
+region = Rect2(64, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s62jh"]
+atlas = ExtResource("3_agxex")
+region = Rect2(0, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gn6sm"]
+atlas = ExtResource("3_agxex")
+region = Rect2(64, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c43k1"]
+atlas = ExtResource("3_agxex")
+region = Rect2(0, 80, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nk5s1"]
+atlas = ExtResource("2_ia064")
+region = Rect2(0, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_agxex"]
+atlas = ExtResource("2_ia064")
+region = Rect2(64, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dcgwr"]
+atlas = ExtResource("3_ia064")
+region = Rect2(0, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jq233"]
+atlas = ExtResource("3_ia064")
+region = Rect2(64, 0, 64, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dcgwr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s07pp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4m3ow")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s62jh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gn6sm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c43k1")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nk5s1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_agxex")
+}],
+"loop": true,
+"name": &"flying",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcgwr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jq233")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s07pp"]
+size = Vector2(199, 167)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_agxex"]
+bg_color = Color(0.5568628, 0, 0.007843138, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_s62jh"]
+font_size = 10
+outline_size = 2
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 0.5764706)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_agxex"]
+size = Vector2(190, 158)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s62jh"]
+size = Vector2(2364, 1353)
+
+[node name="rodan" type="CharacterBody2D" unique_id=1292453062 groups=["enemy"]]
+script = ExtResource("1_d12bp")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1330390424]
+
+[node name="body" type="Node2D" parent="." unique_id=908369977]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="body" unique_id=1396085216]
+texture_filter = 1
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_dcgwr")
+animation = &"flying"
+flip_h = true
+
+[node name="sounds" type="Node2D" parent="." unique_id=1897999482]
+
+[node name="RodanFly" type="AudioStreamPlayer" parent="sounds" unique_id=225661658]
+stream = ExtResource("5_4m3ow")
+volume_db = -5.0
+
+[node name="RodanFire" type="AudioStreamPlayer" parent="sounds" unique_id=1199069589]
+stream = ExtResource("6_dcgwr")
+
+[node name="RodanIdle" type="AudioStreamPlayer" parent="sounds" unique_id=785250566]
+stream = ExtResource("8_agxex")
+volume_db = -10.0
+
+[node name="RodanHit" type="AudioStreamPlayer" parent="sounds" unique_id=1544488882]
+stream = ExtResource("7_nk5s1")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=439483544 groups=["rBody"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1032311696]
+position = Vector2(9.5, -18.5)
+shape = SubResource("RectangleShape2D_s07pp")
+
+[node name="fireSpwanPoint" type="Marker2D" parent="." unique_id=275585279]
+position = Vector2(-86, 3)
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1694445583]
+offset_left = -79.0
+offset_top = -125.0
+offset_right = 97.0
+offset_bottom = -108.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_agxex")
+max_value = 250.0
+value = 250.0
+rounded = true
+show_percentage = false
+
+[node name="Label" type="Label" parent="ProgressBar" unique_id=677024734]
+layout_mode = 0
+offset_top = -18.0
+offset_right = 40.0
+offset_bottom = -1.0
+text = "RODAN"
+label_settings = SubResource("LabelSettings_s62jh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1596399779 groups=["enemy"]]
+position = Vector2(9, -17)
+shape = SubResource("RectangleShape2D_agxex")
+debug_color = Color(0.94736856, 3.465414e-06, 0.58574486, 0.41960785)
+
+[node name="spawnStopTrigger" type="Area2D" parent="." unique_id=1121901629]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spawnStopTrigger" unique_id=1315103048]
+position = Vector2(-507, -6.5)
+shape = SubResource("RectangleShape2D_s62jh")
+
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="spawnStopTrigger" to="." method="_on_spawn_stop_trigger_body_entered"]
+[connection signal="body_exited" from="spawnStopTrigger" to="." method="_on_spawn_stop_trigger_body_exited"]

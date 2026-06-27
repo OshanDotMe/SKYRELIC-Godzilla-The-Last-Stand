@@ -1,0 +1,226 @@
+[gd_scene format=3 uid="uid://ddtln72p0j2k2"]
+
+[ext_resource type="FontFile" uid="uid://cd4ptjlb7f2il" path="res://art/jersey.15.ttf" id="1_3xesf"]
+[ext_resource type="Script" uid="uid://de6qbwsr0pc7d" path="res://scripts/shop_menu.gd" id="1_iar52"]
+[ext_resource type="Texture2D" uid="uid://crktm64xjueyl" path="res://art/bgb.png" id="2_yw1sj"]
+[ext_resource type="AudioStream" uid="uid://cfgi0x6iqfcpi" path="res://art/sounds/hover.ogg" id="4_bkeqs"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_iar52"]
+line_spacing = 5.0
+paragraph_spacing = 10.0
+font = ExtResource("1_3xesf")
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_yw1sj"]
+line_spacing = 5.0
+paragraph_spacing = 10.0
+font = ExtResource("1_3xesf")
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_bkeqs"]
+line_spacing = 5.0
+paragraph_spacing = 10.0
+font = ExtResource("1_3xesf")
+font_size = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yw1sj"]
+bg_color = Color(0.003921569, 0.003921569, 0.003921569, 0.18431373)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bkeqs"]
+bg_color = Color(0, 0, 0, 0.18431373)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2u1b3"]
+bg_color = Color(0, 0, 0, 0.18431373)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eij2y"]
+bg_color = Color(0, 0, 0, 0.18431373)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_2u1b3"]
+font = ExtResource("1_3xesf")
+font_size = 40
+
+[node name="shopMenu" type="Control" unique_id=1816766415]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_iar52")
+
+[node name="hoverSoundPlayer" type="AudioStreamPlayer" parent="." unique_id=960074186]
+stream = ExtResource("4_bkeqs")
+
+[node name="Panel" type="Panel" parent="." unique_id=1734178165]
+layout_mode = 0
+offset_right = 1241.0
+offset_bottom = 695.0
+
+[node name="TextureRect" type="TextureRect" parent="Panel" unique_id=645814926]
+modulate = Color(1, 1, 1, 0.19607843)
+layout_mode = 0
+offset_right = 1235.0
+offset_bottom = 694.0
+texture = ExtResource("2_yw1sj")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Label2" type="Label" parent="Panel" unique_id=2068478196]
+texture_filter = 1
+layout_mode = 0
+offset_left = 32.0
+offset_top = 43.0
+offset_right = 428.0
+offset_bottom = 94.0
+text = "GODZILLA UPGRADE LAB"
+label_settings = SubResource("LabelSettings_iar52")
+
+[node name="Label3" type="Label" parent="Panel" unique_id=13646029]
+texture_filter = 1
+layout_mode = 0
+offset_left = 954.0
+offset_top = 43.0
+offset_right = 1154.0
+offset_bottom = 94.0
+text = "AVAILABLE POINTS: "
+label_settings = SubResource("LabelSettings_yw1sj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="Panel" unique_id=598607627]
+modulate = Color(1, 1, 0.19215687, 1)
+texture_filter = 1
+layout_mode = 0
+offset_left = 1118.0
+offset_top = 43.0
+offset_right = 1215.0
+offset_bottom = 94.0
+text = "0"
+label_settings = SubResource("LabelSettings_bkeqs")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="healthBtn" type="Button" parent="Panel" unique_id=1493948664]
+texture_filter = 1
+layout_mode = 0
+offset_left = 29.0
+offset_top = 135.0
+offset_right = 399.0
+offset_bottom = 220.0
+theme_override_fonts/font = ExtResource("1_3xesf")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_yw1sj")
+text = "UPGRADE HEALTH"
+
+[node name="ChargeBtn" type="Button" parent="Panel" unique_id=1617396806]
+texture_filter = 1
+layout_mode = 0
+offset_left = 29.0
+offset_top = 230.0
+offset_right = 399.0
+offset_bottom = 315.0
+theme_override_fonts/font = ExtResource("1_3xesf")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_bkeqs")
+text = "UPGRADE COOLDOWN"
+
+[node name="AuraBtn" type="Button" parent="Panel" unique_id=1373422711]
+texture_filter = 1
+layout_mode = 0
+offset_left = 29.0
+offset_top = 325.0
+offset_right = 399.0
+offset_bottom = 410.0
+theme_override_fonts/font = ExtResource("1_3xesf")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_2u1b3")
+text = "UPGRADE AURA"
+
+[node name="backBtn" type="Button" parent="Panel" unique_id=2073896549]
+texture_filter = 1
+layout_mode = 0
+offset_left = 29.0
+offset_top = 420.0
+offset_right = 399.0
+offset_bottom = 505.0
+theme_override_fonts/font = ExtResource("1_3xesf")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_eij2y")
+text = "BACK TO MAIN MENU"
+
+[node name="notificationLable" type="Label" parent="Panel" unique_id=203676742]
+layout_mode = 0
+offset_left = 535.0
+offset_top = 57.0
+offset_right = 825.0
+offset_bottom = 80.0
+
+[node name="healthLable" type="Label" parent="Panel" unique_id=340109979]
+texture_filter = 1
+layout_mode = 0
+offset_left = 441.0
+offset_top = 154.0
+offset_right = 534.0
+offset_bottom = 195.0
+label_settings = SubResource("LabelSettings_2u1b3")
+
+[node name="chargeLable" type="Label" parent="Panel" unique_id=630814224]
+texture_filter = 1
+layout_mode = 0
+offset_left = 441.0
+offset_top = 254.0
+offset_right = 534.0
+offset_bottom = 295.0
+label_settings = SubResource("LabelSettings_2u1b3")
+
+[node name="auraLable" type="Label" parent="Panel" unique_id=1219675148]
+texture_filter = 1
+layout_mode = 0
+offset_left = 441.0
+offset_top = 344.0
+offset_right = 534.0
+offset_bottom = 385.0
+label_settings = SubResource("LabelSettings_2u1b3")
+
+[connection signal="mouse_entered" from="Panel/healthBtn" to="." method="_on_health_btn_mouse_entered"]
+[connection signal="pressed" from="Panel/healthBtn" to="." method="_on_health_btn_pressed"]
+[connection signal="mouse_entered" from="Panel/ChargeBtn" to="." method="_on_charge_btn_mouse_entered"]
+[connection signal="pressed" from="Panel/ChargeBtn" to="." method="_on_charge_btn_pressed"]
+[connection signal="mouse_entered" from="Panel/AuraBtn" to="." method="_on_aura_btn_mouse_entered"]
+[connection signal="pressed" from="Panel/AuraBtn" to="." method="_on_aura_btn_pressed"]
+[connection signal="mouse_entered" from="Panel/backBtn" to="." method="_on_back_btn_mouse_entered"]
+[connection signal="pressed" from="Panel/backBtn" to="." method="_on_back_btn_pressed"]

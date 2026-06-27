@@ -1,0 +1,199 @@
+[gd_scene format=3 uid="uid://dgtn4rw6erua4"]
+
+[ext_resource type="Script" uid="uid://bndlmp8drn0xo" path="res://scripts/king_kong.gd" id="1_kiqd1"]
+[ext_resource type="Texture2D" uid="uid://pbovspuldvls" path="res://art/kingkong/dead.png" id="2_0mifg"]
+[ext_resource type="Texture2D" uid="uid://wme6cyadh54y" path="res://art/kingkong/idle.png" id="2_kiqd1"]
+[ext_resource type="Texture2D" uid="uid://ci5ia6ujik64d" path="res://art/kingkong/throw.png" id="4_b2bc4"]
+[ext_resource type="AudioStream" uid="uid://b7fsdtrdrq6gk" path="res://art/sounds/throw.ogg" id="5_b2bc4"]
+[ext_resource type="AudioStream" uid="uid://pry1p63c1oxj" path="res://art/sounds/kong_dead.ogg" id="6_b464c"]
+[ext_resource type="AudioStream" uid="uid://dbmhxflso3dm4" path="res://art/sounds/kong_hit.ogg" id="7_fcwd2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2bc4"]
+atlas = ExtResource("2_0mifg")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53rm8"]
+atlas = ExtResource("2_0mifg")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fm6by"]
+atlas = ExtResource("2_kiqd1")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0mifg"]
+atlas = ExtResource("2_kiqd1")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fcwd2"]
+atlas = ExtResource("4_b2bc4")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xsev1"]
+atlas = ExtResource("4_b2bc4")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b2bc4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b2bc4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53rm8")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fm6by")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0mifg")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fcwd2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xsev1")
+}],
+"loop": false,
+"name": &"throw",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x031n"]
+size = Vector2(128, 149)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b2bc4"]
+size = Vector2(445, 43)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b2bc4"]
+radius = 678.9735
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b464c"]
+bg_color = Color(0.5568628, 0, 0.007843138, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_fcwd2"]
+font_size = 10
+outline_size = 2
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 0.5764706)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b464c"]
+size = Vector2(127, 149)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fcwd2"]
+size = Vector2(2364, 1353)
+
+[node name="kingKong" type="CharacterBody2D" unique_id=283651238 groups=["enemy"]]
+script = ExtResource("1_kiqd1")
+
+[node name="body" type="Node2D" parent="." unique_id=2054467244]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="body" unique_id=256490827]
+texture_filter = 1
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_b2bc4")
+animation = &"idle"
+speed_scale = 0.8
+flip_h = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1816816984 groups=["enemy", "kBody"]]
+position = Vector2(1, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=365023656]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_x031n")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=773512108]
+position = Vector2(26, 72)
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1656922622]
+position = Vector2(53, -52)
+
+[node name="sound" type="Node2D" parent="." unique_id=1263149980]
+
+[node name="Throw" type="AudioStreamPlayer" parent="sound" unique_id=1485181913]
+stream = ExtResource("5_b2bc4")
+volume_db = -8.0
+
+[node name="KongDead" type="AudioStreamPlayer" parent="sound" unique_id=1421250505]
+stream = ExtResource("6_b464c")
+
+[node name="KongHit" type="AudioStreamPlayer" parent="sound" unique_id=871910282]
+stream = ExtResource("7_fcwd2")
+
+[node name="blockWall" type="StaticBody2D" parent="." unique_id=296777912]
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="blockWall" unique_id=1863572698]
+position = Vector2(-287.5, 52.5)
+shape = SubResource("RectangleShape2D_b2bc4")
+debug_color = Color(0.97099406, 0.17267302, 0, 0.41960785)
+
+[node name="detectionArea" type="Area2D" parent="." unique_id=1584209792]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detectionArea" unique_id=283887268]
+shape = SubResource("CircleShape2D_b2bc4")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=907624501]
+offset_left = -92.0
+offset_top = -108.0
+offset_right = 84.0
+offset_bottom = -91.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_b464c")
+max_value = 200.0
+value = 200.0
+rounded = true
+show_percentage = false
+
+[node name="Label" type="Label" parent="ProgressBar" unique_id=1608554564]
+layout_mode = 0
+offset_top = -18.0
+offset_right = 40.0
+offset_bottom = -1.0
+text = "KING KONG"
+label_settings = SubResource("LabelSettings_fcwd2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=465241057 groups=["enemy", "kBody"]]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_b464c")
+debug_color = Color(0.9074232, 0.0001230222, 0.7418147, 0.41960785)
+
+[node name="spawnStopTrigger" type="Area2D" parent="." unique_id=211074608]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spawnStopTrigger" unique_id=712596005]
+position = Vector2(-507, -6.5)
+shape = SubResource("RectangleShape2D_fcwd2")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=311812015]
+offset_left = -669.0
+offset_top = 71.0
+offset_right = -510.0
+offset_bottom = 87.0
+color = Color(1, 0.6156863, 0.46666667, 0.49411765)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="detectionArea" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="detectionArea" to="." method="_on_detection_area_body_exited"]
+[connection signal="body_entered" from="spawnStopTrigger" to="." method="_on_spawn_stop_trigger_body_entered"]
+[connection signal="body_exited" from="spawnStopTrigger" to="." method="_on_spawn_stop_trigger_body_exited"]

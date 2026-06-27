@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://jqnrw2ntbf1x"]
+
+[ext_resource type="Script" uid="uid://d28qixqrdthcu" path="res://scripts/sky_lightning.gd" id="1_nnd4w"]
+[ext_resource type="Texture2D" uid="uid://bk1dpu4gtfo8b" path="res://art/ghidorah/lightning.png" id="2_nnd4w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fw206"]
+size = Vector2(39, 543)
+
+[node name="skyLightning" type="Area2D" unique_id=1776860828]
+position = Vector2(0, 155)
+script = ExtResource("1_nnd4w")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=744000823]
+texture_filter = 1
+position = Vector2(5.8208605e-11, 148.99998)
+rotation = 1.5701181
+scale = Vector2(1.2, 1)
+texture = ExtResource("2_nnd4w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=826024261]
+position = Vector2(2.5, 118.5)
+shape = SubResource("RectangleShape2D_fw206")

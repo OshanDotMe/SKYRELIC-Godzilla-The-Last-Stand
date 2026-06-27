@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://4hep61bviclk"]
+
+[ext_resource type="Script" uid="uid://c2o83pwxwkv7f" path="res://scripts/leader_board_menu.gd" id="1_hhwa6"]
+[ext_resource type="Texture2D" uid="uid://crktm64xjueyl" path="res://art/bgb.png" id="2_b7wn7"]
+[ext_resource type="FontFile" uid="uid://cd4ptjlb7f2il" path="res://art/jersey.15.ttf" id="2_hhwa6"]
+[ext_resource type="Texture2D" uid="uid://b4rpui5wucmq3" path="res://art/close.png" id="3_b7wn7"]
+[ext_resource type="AudioStream" uid="uid://cfgi0x6iqfcpi" path="res://art/sounds/hover.ogg" id="5_b7wn7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_p0rxy"]
+line_spacing = 5.0
+paragraph_spacing = 10.0
+font = ExtResource("2_hhwa6")
+font_size = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kn47s"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="leaderBoardMenu" type="Control" unique_id=1269963523]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1231.0
+offset_bottom = 691.0
+script = ExtResource("1_hhwa6")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1716499981]
+modulate = Color(1, 1, 1, 0.19607843)
+layout_mode = 0
+offset_right = 1235.0
+offset_bottom = 694.0
+texture = ExtResource("2_b7wn7")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Label3" type="Label" parent="." unique_id=1465579211]
+texture_filter = 1
+layout_mode = 0
+offset_left = 457.0
+offset_top = 48.0
+offset_right = 732.0
+offset_bottom = 89.0
+text = "TOP 10 HIGH SCORES"
+label_settings = SubResource("LabelSettings_p0rxy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1903902141]
+layout_mode = 0
+offset_left = 357.0
+offset_top = 108.0
+offset_right = 821.0
+offset_bottom = 640.0
+color = Color(0, 0, 0, 0.3254902)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ColorRect" unique_id=1948639851]
+layout_mode = 0
+offset_right = 461.0
+offset_bottom = 529.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/ScrollContainer" unique_id=2089562795]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Button3" type="Button" parent="." unique_id=728296267]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1168.0
+offset_top = 8.0
+offset_right = 1211.0
+offset_bottom = 48.0
+scale = Vector2(1.2, 1.2)
+theme_override_styles/normal = SubResource("StyleBoxFlat_kn47s")
+icon = ExtResource("3_b7wn7")
+icon_alignment = 1
+
+[node name="hoverSoundPlayer" type="AudioStreamPlayer" parent="." unique_id=1573441555]
+stream = ExtResource("5_b7wn7")
+
+[connection signal="mouse_entered" from="Button3" to="." method="_on_button_3_mouse_entered"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]

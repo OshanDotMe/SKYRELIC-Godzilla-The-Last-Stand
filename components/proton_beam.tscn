@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://c235crftcvvfs"]
+
+[ext_resource type="Script" uid="uid://1a0624iippuh" path="res://scripts/proton_beam.gd" id="1_qdwmq"]
+[ext_resource type="Texture2D" uid="uid://d2o1c7ak38vp3" path="res://art/mechagodzilla/beamBody.png" id="2_086sa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y11u6"]
+size = Vector2(457.125, 9.5)
+
+[node name="protonBeam" type="Area2D" unique_id=248947039]
+script = ExtResource("1_qdwmq")
+
+[node name="beamBody" type="Sprite2D" parent="." unique_id=1127387297]
+texture_filter = 1
+position = Vector2(-592, -40)
+texture = ExtResource("2_086sa")
+centered = false
+flip_h = true
+region_rect = Rect2(0, 0, 200, 50)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1348971891]
+position = Vector2(-269.4375, 0.25)
+shape = SubResource("RectangleShape2D_y11u6")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=960507847]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

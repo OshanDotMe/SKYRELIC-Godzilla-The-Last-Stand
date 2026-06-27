@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b6c6l263t8vfe"]
+
+[ext_resource type="Script" uid="uid://bbjo3ot1fk2v5" path="res://scripts/mouth_lightning.gd" id="1_fw206"]
+[ext_resource type="Texture2D" uid="uid://coepf1yjtfqym" path="res://art/ghidorah/beamBody (1) (1).png" id="2_fw206"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fw206"]
+size = Vector2(468.4068, 10)
+
+[node name="mouthLightning" type="Area2D" unique_id=1776860828]
+script = ExtResource("1_fw206")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1240056457]
+texture_filter = 1
+position = Vector2(-294, 0)
+rotation = -0.066861235
+texture = ExtResource("2_fw206")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=826024261]
+position = Vector2(-264.19144, 0.40046102)
+rotation = -0.05977558
+shape = SubResource("RectangleShape2D_fw206")

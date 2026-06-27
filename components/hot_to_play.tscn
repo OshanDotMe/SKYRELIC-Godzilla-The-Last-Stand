@@ -1,0 +1,290 @@
+[gd_scene format=3 uid="uid://7iqbuju0b8fj"]
+
+[ext_resource type="Script" uid="uid://bcw05pwfqvksj" path="res://scripts/hot_to_play.gd" id="1_dhjkv"]
+[ext_resource type="Texture2D" uid="uid://crktm64xjueyl" path="res://art/bgb.png" id="1_xv2we"]
+[ext_resource type="Texture2D" uid="uid://b4rpui5wucmq3" path="res://art/close.png" id="2_wxw73"]
+[ext_resource type="FontFile" uid="uid://cd4ptjlb7f2il" path="res://art/jersey.15.ttf" id="3_vel4n"]
+[ext_resource type="Texture2D" uid="uid://b5suw0t6dgjnv" path="res://art/a.png" id="4_x7hnu"]
+[ext_resource type="Texture2D" uid="uid://ot3hkl7a3j4l" path="res://art/d.png" id="5_ecrmv"]
+[ext_resource type="Texture2D" uid="uid://cruxmn1u55w2x" path="res://art/f.png" id="6_dhjkv"]
+[ext_resource type="Texture2D" uid="uid://bk272efrfursq" path="res://art/1.png" id="6_ecrmv"]
+[ext_resource type="Texture2D" uid="uid://cpelylpmlke1r" path="res://art/right.png" id="7_i3anf"]
+[ext_resource type="AudioStream" uid="uid://cfgi0x6iqfcpi" path="res://art/sounds/hover.ogg" id="10_i3anf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1erf5"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bffqs"]
+line_spacing = 5.0
+paragraph_spacing = 10.0
+font = ExtResource("3_vel4n")
+font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_dhjkv"]
+line_spacing = 5.0
+paragraph_spacing = 10.0
+font = ExtResource("3_vel4n")
+font_size = 40
+font_color = Color(1, 0.39686126, 0.35420525, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_nbmsf"]
+line_spacing = 5.0
+paragraph_spacing = 10.0
+font = ExtResource("3_vel4n")
+font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_i3anf"]
+line_spacing = -8.0
+paragraph_spacing = 10.0
+font = ExtResource("3_vel4n")
+font_size = 22
+
+[sub_resource type="LabelSettings" id="LabelSettings_xmac7"]
+line_spacing = -8.0
+paragraph_spacing = 10.0
+font = ExtResource("3_vel4n")
+font_size = 22
+font_color = Color(1, 1, 0.7176471, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_kpiab"]
+line_spacing = 5.0
+paragraph_spacing = 10.0
+font = ExtResource("3_vel4n")
+font_size = 15
+font_color = Color(0.97004503, 0.17364398, 2.7723312e-05, 1)
+
+[node name="hotToPlay" type="Control" unique_id=570143922]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1229.0
+offset_bottom = 692.0
+script = ExtResource("1_dhjkv")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=614514125]
+modulate = Color(1, 1, 1, 0.19607843)
+layout_mode = 0
+offset_right = 1235.0
+offset_bottom = 694.0
+texture = ExtResource("1_xv2we")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Button3" type="Button" parent="." unique_id=1883535850]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1168.0
+offset_top = 8.0
+offset_right = 1211.0
+offset_bottom = 48.0
+scale = Vector2(1.2, 1.2)
+theme_override_styles/normal = SubResource("StyleBoxFlat_1erf5")
+icon = ExtResource("2_wxw73")
+icon_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=917483089]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 55.0
+offset_right = 1167.0
+offset_bottom = 631.0
+color = Color(0, 0, 0, 0.12941177)
+
+[node name="Label3" type="Label" parent="ColorRect" unique_id=96026465]
+texture_filter = 1
+layout_mode = 0
+offset_left = 4.0
+offset_top = 23.0
+offset_right = 279.0
+offset_bottom = 64.0
+text = "GAME CONTROLS"
+label_settings = SubResource("LabelSettings_bffqs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label9" type="Label" parent="ColorRect" unique_id=1375045851]
+texture_filter = 1
+layout_mode = 0
+offset_left = 27.0
+offset_top = 245.0
+offset_right = 372.0
+offset_bottom = 286.0
+text = "UNDERSTANDING THE HUD"
+label_settings = SubResource("LabelSettings_bffqs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label13" type="Label" parent="ColorRect" unique_id=1155279774]
+texture_filter = 1
+layout_mode = 0
+offset_left = 27.0
+offset_top = 436.0
+offset_right = 372.0
+offset_bottom = 477.0
+text = "ULTIMATE OBJECTIVE"
+label_settings = SubResource("LabelSettings_dhjkv")
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="ColorRect" unique_id=1531090264]
+texture_filter = 1
+layout_mode = 0
+offset_left = -11.0
+offset_top = 70.0
+offset_right = 264.0
+offset_bottom = 111.0
+text = "MOVE LEFT/RIGHT: USE"
+label_settings = SubResource("LabelSettings_nbmsf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label10" type="Label" parent="ColorRect" unique_id=1962082624]
+texture_filter = 1
+layout_mode = 0
+offset_left = 28.0
+offset_top = 287.0
+offset_right = 1016.0
+offset_bottom = 328.0
+text = "HEALTH BAR (RED BAR) : REPRESENT YOUR CURRENT LIFE. IT DECREASES WHEN HIT BY ENEMY ATTACKS. IF IT HITS 0, GODZILLA FALLS."
+label_settings = SubResource("LabelSettings_i3anf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label11" type="Label" parent="ColorRect" unique_id=936956619]
+texture_filter = 1
+layout_mode = 0
+offset_left = 28.0
+offset_top = 324.0
+offset_right = 1054.0
+offset_bottom = 372.0
+text = "ATOMIC CHARGE BAR (BLUE BAR): THIS BAR MUST REACH 100% BEFORE YOU CAN FIRE THE ATOMIC BREATH. IT AUTOMATICALLY RECHARGES 
+OVER TIME AFTER USE."
+label_settings = SubResource("LabelSettings_i3anf")
+vertical_alignment = 1
+
+[node name="Label12" type="Label" parent="ColorRect" unique_id=1673624747]
+texture_filter = 1
+layout_mode = 0
+offset_left = 28.0
+offset_top = 378.0
+offset_right = 1054.0
+offset_bottom = 426.0
+text = "AIMING THE BEAM: THE DIRECTION OF YOUR ATOMIC BREATH DEPENDS ON YOUR MOUSE CURSOR. AIM LOW TO BLAST THE FLOOR OR HIGH TO
+SWEEP THE SKIES!"
+label_settings = SubResource("LabelSettings_i3anf")
+vertical_alignment = 1
+
+[node name="Label14" type="Label" parent="ColorRect" unique_id=1138087865]
+texture_filter = 1
+layout_mode = 0
+offset_left = 28.0
+offset_top = 484.0
+offset_right = 1061.0
+offset_bottom = 557.0
+text = "YOUR MISSION IS TO DEFEND YOUR TITAN TITLE, CRUSH THE INVADING MILITARY FORCES, AND SURVIVE THE ULTIMATE SHOWDOWN AGAINST 
+KING KONG, RODAN, MECHA GODZILLA AND KING GHIDORAH! SURVIVE AS LONG AS POSSIBLE, MAXIMIZE YOUR HIGH SCORE, AND CLAIM THE 
+#1 SPOT ON THE GLOBAL LEADERBOARD! "
+label_settings = SubResource("LabelSettings_xmac7")
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="ColorRect" unique_id=480304257]
+texture_filter = 1
+layout_mode = 0
+offset_left = 29.0
+offset_top = 112.0
+offset_right = 338.0
+offset_bottom = 153.0
+text = "TAIL SWIP (NORMAL ATTACK): PRESS"
+label_settings = SubResource("LabelSettings_nbmsf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="ColorRect" unique_id=1788341751]
+texture_filter = 1
+layout_mode = 0
+offset_left = 29.0
+offset_top = 154.0
+offset_right = 400.0
+offset_bottom = 195.0
+text = "ATOMIC BREATH (ULTIMATE ATTACK): PRESS"
+label_settings = SubResource("LabelSettings_nbmsf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label7" type="Label" parent="ColorRect" unique_id=427677655]
+texture_filter = 1
+layout_mode = 0
+offset_left = -13.0
+offset_top = 194.0
+offset_right = 358.0
+offset_bottom = 235.0
+text = "MOTHRA SUPPORT (HEAL): PRESS "
+label_settings = SubResource("LabelSettings_nbmsf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label8" type="Label" parent="ColorRect" unique_id=438565162]
+texture_filter = 1
+layout_mode = 0
+offset_left = 375.0
+offset_top = 195.0
+offset_right = 966.0
+offset_bottom = 236.0
+text = "THIS IS FOR INSTANT 100% HEALTH RECOVERY. (NOTE: THIS DIVINE ASSISTANCE CAN ONLY BE USED ONCE PER GAME!)"
+label_settings = SubResource("LabelSettings_kpiab")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect" unique_id=1741034851]
+layout_mode = 0
+offset_left = 22.0
+offset_top = -36.0
+offset_right = 496.0
+offset_bottom = 218.0
+texture = ExtResource("4_x7hnu")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="TextureRect2" type="TextureRect" parent="ColorRect" unique_id=1715093672]
+layout_mode = 0
+offset_left = 64.0
+offset_top = -36.0
+offset_right = 538.0
+offset_bottom = 218.0
+texture = ExtResource("5_ecrmv")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="TextureRect5" type="TextureRect" parent="ColorRect" unique_id=181531531]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 87.0
+offset_right = 583.0
+offset_bottom = 341.0
+texture = ExtResource("6_ecrmv")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="TextureRect4" type="TextureRect" parent="ColorRect" unique_id=1746239421]
+layout_mode = 0
+offset_left = 198.0
+offset_top = 46.0
+offset_right = 672.0
+offset_bottom = 300.0
+texture = ExtResource("6_dhjkv")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="TextureRect3" type="TextureRect" parent="ColorRect" unique_id=163271290]
+layout_mode = 0
+offset_left = 181.0
+offset_top = 42.0
+offset_right = 566.0
+offset_bottom = 222.0
+texture = ExtResource("7_i3anf")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="hoverSoundPlayer" type="AudioStreamPlayer" parent="." unique_id=1387051266]
+stream = ExtResource("10_i3anf")
+
+[connection signal="mouse_entered" from="Button3" to="." method="_on_button_3_mouse_entered"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]

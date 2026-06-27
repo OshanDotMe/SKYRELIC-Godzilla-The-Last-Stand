@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://dmrchk038l0xc"]
+
+[ext_resource type="Script" uid="uid://b2r7ar1cs1byv" path="res://scripts/name_input.gd" id="1_g5w1n"]
+[ext_resource type="FontFile" uid="uid://cd4ptjlb7f2il" path="res://art/jersey.15.ttf" id="1_ikp6j"]
+[ext_resource type="AudioStream" uid="uid://cfgi0x6iqfcpi" path="res://art/sounds/hover.ogg" id="3_y8owd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_g5w1n"]
+line_spacing = 5.0
+paragraph_spacing = 10.0
+font = ExtResource("1_ikp6j")
+font_size = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y8owd"]
+bg_color = Color(0.003921569, 0.003921569, 0.003921569, 0.18431373)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="nameInput" type="Control" unique_id=1436004518]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1231.0
+offset_bottom = 690.0
+script = ExtResource("1_g5w1n")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=268530874]
+layout_mode = 0
+offset_right = 1231.0
+offset_bottom = 690.0
+color = Color(0, 0, 0, 0.21176471)
+
+[node name="Label3" type="Label" parent="ColorRect" unique_id=1366736512]
+texture_filter = 1
+layout_mode = 0
+offset_left = 490.0
+offset_top = 232.0
+offset_right = 765.0
+offset_bottom = 273.0
+text = "ENTER YOUR NAME"
+label_settings = SubResource("LabelSettings_g5w1n")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="ColorRect" unique_id=177075644]
+texture_filter = 1
+layout_mode = 0
+offset_left = 474.0
+offset_top = 281.0
+offset_right = 780.0
+offset_bottom = 342.0
+theme_override_fonts/font = ExtResource("1_ikp6j")
+theme_override_font_sizes/font_size = 25
+placeholder_text = "Type your name here..."
+alignment = 1
+
+[node name="continueBtn" type="Button" parent="ColorRect" unique_id=843210799]
+texture_filter = 1
+layout_mode = 0
+offset_left = 475.0
+offset_top = 351.0
+offset_right = 779.0
+offset_bottom = 436.0
+theme_override_fonts/font = ExtResource("1_ikp6j")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_y8owd")
+text = "CONTINUE"
+
+[node name="hoverSoundPlayer" type="AudioStreamPlayer" parent="." unique_id=1616141187]
+stream = ExtResource("3_y8owd")
+
+[connection signal="mouse_entered" from="ColorRect/continueBtn" to="." method="_on_continue_btn_mouse_entered"]
+[connection signal="pressed" from="ColorRect/continueBtn" to="." method="_on_continue_btn_pressed"]

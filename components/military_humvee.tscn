@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://lf65f83as06p"]
+
+[ext_resource type="Script" uid="uid://snc6nb1pcqek" path="res://scripts/military_humvee.gd" id="1_wxvja"]
+[ext_resource type="Texture2D" uid="uid://8qm6h4gyads6" path="res://art/military/military_humvee.png" id="2_unsri"]
+[ext_resource type="Texture2D" uid="uid://cwjd3qyx7exrv" path="res://art/flame1.png" id="3_pt10m"]
+[ext_resource type="AudioStream" uid="uid://cl5g3fxl7is5p" path="res://art/sounds/explosion.ogg" id="4_3km3b"]
+[ext_resource type="AudioStream" uid="uid://blxo3ypp7am8o" path="res://art/sounds/humvee_sound.ogg" id="5_unsri"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3km3b"]
+size = Vector2(56, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wxvja"]
+size = Vector2(12, 28)
+
+[node name="military_humvee" type="CharacterBody2D" unique_id=1636609523 groups=["enemy"]]
+script = ExtResource("1_wxvja")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=846773100]
+position = Vector2(0, 1)
+rect = Rect2(-28, -12, 56, 28)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=108984399]
+texture_filter = 1
+position = Vector2(0, -9)
+rotation = -0.0009494559
+texture = ExtResource("2_unsri")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1000802173]
+position = Vector2(0, -4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=634790202]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_3km3b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1183349172]
+position = Vector2(-23, 3)
+shape = SubResource("RectangleShape2D_wxvja")
+debug_color = Color(0.9925795, 0, 0.25647372, 0.41960785)
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1462758402]
+visible = false
+texture_filter = 1
+texture = ExtResource("3_pt10m")
+
+[node name="sounds" type="Node2D" parent="." unique_id=164895036]
+
+[node name="Explosion" type="AudioStreamPlayer" parent="sounds" unique_id=1875903882]
+stream = ExtResource("4_3km3b")
+volume_db = -9.0
+
+[node name="HumveeSound" type="AudioStreamPlayer" parent="sounds" unique_id=94240024]
+stream = ExtResource("5_unsri")
+volume_db = -13.0
+
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

@@ -1,0 +1,7 @@
+# Godot Default Ignores
+.godot/
+.import/
+export_presets.cfg
+
+# Protect everything inside the art folder (Sprites, Backgrounds, and Sounds)
+art/
