@@ -17,6 +17,7 @@ This repository showcases the complete core architecture, clean code practices, 
 *   **Scalable Enemy Logic & Pattern Design:** Dynamic custom logic for diverse enemy classes—ranging from ground-moving military units with custom detection range behaviors to flying and stationary multi-phase boss targets.
 *   **Asynchronous State Optimization:** Optimized heavy combat coroutines using Godot’s asynchronous `await` architecture, cleanly utilizing robust thread/loop wrappers like `Engine.get_main_loop()` to safely prevent runtime engine crashes during rapid state or menu transitions.
 *   **Layered Collision Architecture:** Fine-tuned precise `Area2D` collision layer masking to manage clean cross-node damage delivery profiles, allowing multi-hit player blast nodes to interact accurately with nested enemy hitbox frameworks.
+*   **Context-Aware Dynamic Aiming:** Engineered a dynamic attack vector system for the player's primary weapon (Atomic Breath). By calculating the vertical delta between the mouse cursor's Y-position and the player node's eye-level coordinates, the system dynamically alters the projectile's trajectory container between a straight-line vector and a floor-sweeping vector.
 
 ---
 
