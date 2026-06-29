@@ -111,7 +111,7 @@ position = Vector2(-29.5, 351)
 shape = SubResource("RectangleShape2D_pdxoy")
 
 [node name="player" parent="gameWorld" unique_id=719159684 instance=ExtResource("3_eeoh7")]
-position = Vector2(6799, 433)
+position = Vector2(253, 433)
 
 [node name="rodanFull" type="Node2D" parent="gameWorld" unique_id=1760428753]
 position = Vector2(5890, 0)
@@ -142,7 +142,7 @@ position = Vector2(1731, 274)
 shape = SubResource("CircleShape2D_5nrm8")
 
 [node name="ColorRect" type="ColorRect" parent="gameWorld/rodanFull" unique_id=567044230]
-offset_left = 1064.0
+offset_left = 1048.0
 offset_top = 512.0
 offset_right = 1181.0
 offset_bottom = 528.0

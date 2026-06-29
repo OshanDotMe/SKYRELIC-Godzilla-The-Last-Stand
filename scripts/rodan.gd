@@ -102,6 +102,8 @@ func move_to_point(target):
 			target,
 			150 * get_process_delta_time()
 		)
+		if not is_inside_tree():
+			return
 		await get_tree().process_frame
 
 func attack_phase():
@@ -140,7 +142,9 @@ func rest_phase():
 	$sounds/RodanFly.stop()
 	$sounds/RodanIdle.play()
 	$body/AnimatedSprite2D.play("idle")
-	await get_tree().create_timer(6.3, false).timeout
+	if not is_inside_tree():
+			return
+	await get_tree().create_timer(10.0, false).timeout
 	if is_dead:
 		return 
 	$sounds/RodanIdle.stop()
