@@ -39,6 +39,13 @@ paragraph_spacing = 10.0
 font = ExtResource("3_vel4n")
 font_size = 22
 
+[sub_resource type="LabelSettings" id="LabelSettings_v4sf3"]
+line_spacing = -8.0
+paragraph_spacing = 10.0
+font = ExtResource("3_vel4n")
+font_size = 22
+font_color = Color(0.96862745, 0.17254902, 0, 1)
+
 [sub_resource type="LabelSettings" id="LabelSettings_xmac7"]
 line_spacing = -8.0
 paragraph_spacing = 10.0
@@ -169,7 +176,7 @@ offset_right = 1054.0
 offset_bottom = 426.0
 text = "AIMING THE BEAM: THE DIRECTION OF YOUR ATOMIC BREATH DEPENDS ON YOUR MOUSE CURSOR. AIM LOW TO BLAST THE FLOOR OR HIGH TO
 SWEEP THE SKIES!"
-label_settings = SubResource("LabelSettings_i3anf")
+label_settings = SubResource("LabelSettings_v4sf3")
 vertical_alignment = 1
 
 [node name="Label14" type="Label" parent="ColorRect" unique_id=1138087865]
@@ -207,6 +214,17 @@ offset_bottom = 195.0
 text = "ATOMIC BREATH (ULTIMATE ATTACK): PRESS"
 label_settings = SubResource("LabelSettings_nbmsf")
 horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label15" type="Label" parent="ColorRect" unique_id=1142325100]
+texture_filter = 1
+layout_mode = 0
+offset_left = 466.0
+offset_top = 154.0
+offset_right = 837.0
+offset_bottom = 195.0
+text = "+ AIM WITH MOUSE"
+label_settings = SubResource("LabelSettings_nbmsf")
 vertical_alignment = 1
 
 [node name="Label7" type="Label" parent="ColorRect" unique_id=427677655]
