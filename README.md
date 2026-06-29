@@ -4,7 +4,7 @@ A fast-paced, action-packed 2D Pixel arcade boss-rush game developed from scratc
 
 ---
 
-## 🕹️ Play the Game
+## Play the Game
 The game is fully published and optimized to play directly in your browser or desktop:
 👉 **[Play it now on Itch.io](https://skyrelic.itch.io/godzilla-the-last-stand)**
 
