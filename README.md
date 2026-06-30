@@ -1,6 +1,6 @@
 # 🦖 Godzilla The Last Stand (by SKYRELIC) 🎮
 
-A fast-paced, action-packed 2D Pixel arcade boss-rush game developed from scratch using the **Godot 4 Engine**. Take control of ultimate powers and battle through waves of heavy military defenses and massive monster bosses!
+A fast-paced, action-packed 2D Pixel arcade boss-rush game developed from scratch using the **Godot 4 Engine**. Take control of ultimate powers and battle through waves of heavy military defenses and massive monster bosses! (King kong, Rodan, Mecha Godzilla, and King Ghidorah)
 
 ---
 
