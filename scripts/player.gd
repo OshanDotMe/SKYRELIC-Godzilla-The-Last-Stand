@@ -242,7 +242,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("rock"):
 		$sound/Hit.play()
 		$sound/GodzillaHit.play()
-		take_damage(10)
+		take_damage(4)
 	if area.is_in_group("fire"):
 		$sound/Hit.play()
 		$sound/GodzillaHit.play()
@@ -250,7 +250,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("missile"):
 		$sound/Hit.play()
 		$sound/GodzillaHit.play()
-		take_damage(15)
+		take_damage(6)
 
 func lock_player_for_ending():
 	is_locked = true
