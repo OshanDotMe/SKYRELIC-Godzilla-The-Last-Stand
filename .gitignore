@@ -5,3 +5,5 @@ export_presets.cfg
 
 # Protect everything inside the art folder (Sprites, Backgrounds, and Sounds)
 art/
+
+secret.cfg

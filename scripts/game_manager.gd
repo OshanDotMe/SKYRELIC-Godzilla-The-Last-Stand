@@ -19,11 +19,14 @@ var aura_upgrade_cost: int = 100
 var current_player_name: String = ""
 
 func _ready() -> void:
-	SilentWolf.configure({
-		"api_key": "GC9aqE0d7v9a5LTRerNpX8Y2DAfGYTTBjc1BfyV5",
-		"game_id": "godzillalaststand",
-		"log_level": 1
-	})
+	var config = ConfigFile.new()
+	var err = config.load("res://secret.cfg")
+	if err == OK:
+		var api_key = config.get_value("silentwolf", "api_key")
+		var game_id = config.get_value("silentwolf", "game_id")
+		SilentWolf.configure({"api_key": api_key, "game_id": game_id})
+	else:
+		print("Error: Could not load secret.cfg file!")
 	#SilentWolf.process_mode = Node.PROCESS_MODE_ALWAYS
 
 func add_score(amount: int):
