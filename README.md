@@ -29,4 +29,5 @@ Every single creative asset used in this game was built entirely from scratch **
 
 ---
 
-
+## 🔒 Source Code Security Notice
+*Please note: For security reasons, the underlying creative artwork folders (`art/`) containing binary textures and sound elements, alongside private SilentWolf cloud infrastructure secret 
