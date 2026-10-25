@@ -21,11 +21,7 @@ This repository showcases the complete core architecture, clean code practices, 
 
 ---
 
-## 🎨 Creative Production (100% Human-Made Solo Production - No AI)
-Every single creative asset used in this game was built entirely from scratch **without the use of any AI generation tools**, maintaining a pure, highly polished retro arcade identity:
-*   **Branding:** Designed and scripted the opening **SKYRELIC** splash animation intro.
-*   **Art:** 100% original 2D pixel-art sprite animations, background tilemaps, and UI layers drawn and animated frame-by-frame by hand.
-*   **Audio Design & Editing:** Sourced raw audio elements from YouTube and meticulously edited, trimmed, and mixed them using **Audacity** to perfectly match the retro arcade impact and deliver satisfying combat feedback.
+
 
 ---
 
